@@ -1,4 +1,4 @@
-name: 'Docker Action'
+name: 'Jfrog attemps Action'
 description: 'GitHub Actions for build and publish jfrog artifact with timout'
 author: 'Ruben <ruben.baez@mojix.com>'
 branding:
