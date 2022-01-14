@@ -1,0 +1,34 @@
+name: 'Docker Action'
+description: 'GitHub Actions for build and publish jfrog artifact with timout'
+author: 'Ruben <ruben.baez@mojix.com>'
+branding:
+  icon: 'package'
+  color: 'red'
+inputs:
+  username:
+    description: 'Jfrog username'
+    required: true
+  password:
+    description: 'Jfrog password'
+    required: true
+  url:
+    description: 'URL where artifact will be deployed'
+    required: true
+  artifact:
+    description: 'Artifact name'
+    required: false
+  delay:
+    description: 'expected time for artifact deployment'
+    required: false
+outputs:
+  image:
+    description: 'Artifact deployed'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.url }}
+    - ${{ inputs.artifact }}
+    - ${{ inputs.delay }}
