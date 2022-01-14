@@ -11,12 +11,12 @@ inputs:
   password:
     description: 'Jfrog password'
     required: true
-  url:
-    description: 'URL where artifact will be deployed'
-    required: true
   artifact:
     description: 'Artifact name'
     required: false
+  url:
+    description: 'URL where artifact will be deployed'
+    required: true
   delay:
     description: 'expected time for artifact deployment'
     required: false
@@ -29,6 +29,6 @@ runs:
   args:
     - ${{ inputs.username }}
     - ${{ inputs.password }}
-    - ${{ inputs.url }}
     - ${{ inputs.artifact }}
+    - ${{ inputs.url }}
     - ${{ inputs.delay }}

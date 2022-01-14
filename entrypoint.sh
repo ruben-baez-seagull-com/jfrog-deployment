@@ -49,6 +49,6 @@ function run {
     done
 }
 
+echo "Artifact to upload: $ARTIFACT"
 run curl -X PUT -u $USERNAME:$PASSWORD -T $ARTIFACT $URL
-
 echo ::set-output name=output::"Artifact deployed"
