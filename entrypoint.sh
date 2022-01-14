@@ -2,13 +2,13 @@
 
 set -e
 
-USERNAME=$1
+USER=$1
 PASSWORD=$2
 ARTIFACT=$3
 URL=$4
 DELAY=$5
 
-if [ -z $USERNAME ]; then
+if [ -z $USER ]; then
     echo 'Required username parameter'
     exit 1
 fi
@@ -50,5 +50,5 @@ function run {
 }
 
 echo "Artifact to upload: $ARTIFACT"
-run curl -X PUT -u $USERNAME:$PASSWORD -T $ARTIFACT $URL
+run curl -X PUT -u $USER:$PASSWORD -T $ARTIFACT $URL
 echo ::set-output name=output::"Artifact deployed"
